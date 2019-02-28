@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>Contact Entry Form</h1>
+
+<a href="{% url 'contact' %}">Enter Contact Info</a>
+{% for contact in contacts %}
+    <p>{{ contact.name }}</p>
+    <p>{{ contact.email }}</p>
+    <p>{{ contact.phone_number }}</p>
+    <p><a href="{% url 'edit' contact.id %}">Edit</a></p>
+    <p><a href="{% url 'delete' contact.id %}">Delete</a></p>
+    <hr>
+{% endfor %}
+
+</body>
+</html>
